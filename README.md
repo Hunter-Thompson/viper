@@ -7,9 +7,16 @@
 
 ## Install
 
+<<<<<<< HEAD
 ```console
 go get github.com/ava-labs/viper
+=======
+```shell
+go get github.com/spf13/viper
+>>>>>>> a86148e (docs: add note about go modules to the readme)
 ```
+
+**Note:** Viper uses [Go Modules](https://github.com/golang/go/wiki/Modules) to manage dependencies.
 
 
 ## What is Viper?
