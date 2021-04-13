@@ -829,8 +829,14 @@ Is there a better name for a [commander](http://en.wikipedia.org/wiki/Cobra_Comm
 
 **tl;dr:** Yes.
 
+<<<<<<< HEAD
 Keys are case-insensitive by default. They can be made case-sensitive with
 `viper.SetKeysCaseSensitive(true)`.
+=======
+### Is it safe to concurrently read and write to a viper?
+
+No, you will need to synchronize access to the viper yourself (for example by using the `sync` package). Concurrent reads and writes can cause a panic.
+>>>>>>> cb41ae0 (doc: discuss concurrency in README)
 
 ## Troubleshooting
 
