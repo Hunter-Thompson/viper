@@ -7,9 +7,25 @@
 
 ## Install
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ```console
 go get github.com/ava-labs/viper
+=======
+```shell
+go get github.com/spf13/viper
+>>>>>>> a86148e (docs: add note about go modules to the readme)
+=======
+```shell
+go get github.com/spf13/viper
+=======
+```console
+go get github.com/ava-labs/viper
+>>>>>>> 65cc042 (remove external references (#2))
+>>>>>>> 69471d1 (remove external references (#2))
 ```
+
+**Note:** Viper uses [Go Modules](https://github.com/golang/go/wiki/Modules) to manage dependencies.
 
 
 ## What is Viper?
@@ -822,11 +838,20 @@ Is there a better name for a [commander](http://en.wikipedia.org/wiki/Cobra_Comm
 
 **tl;dr:** Yes.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 Keys are case-insensitive by default. They can be made case-sensitive with
 `viper.SetKeysCaseSensitive(true)`.
+=======
+### Is it safe to concurrently read and write to a viper?
+=======
+Keys are case-insensitive by default. They can be made case-sensitive with
+`viper.SetKeysCaseSensitive(true)`.
+>>>>>>> 136c592 (case sensitive adjustments (#1))
+
+No, you will need to synchronize access to the viper yourself (for example by using the `sync` package). Concurrent reads and writes can cause a panic.
+>>>>>>> cb41ae0 (doc: discuss concurrency in README)
 
 ## Troubleshooting
 
-### Unmarshaling doesn't work
-
-The most common reason for this issue is improper use of struct tags (eg. `yaml` or `json`). Viper uses [github.com/mitchellh/mapstructure](https://github.com/mitchellh/mapstructure) under the hood for unmarshaling values which uses `mapstructure` tags by default. Please refer to the library's documentation for using other struct tags.
+See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).

@@ -176,6 +176,8 @@ func DecodeHook(hook mapstructure.DecodeHookFunc) DecoderConfigOption {
 //		"user": "root",
 //		"endpoint": "https://localhost"
 //	}
+//
+// Note: Vipers are not safe for concurrent Get() and Set() operations.
 type Viper struct {
 	// Delimiter that separates a list of keys
 	// used to access a nested value in one go
@@ -343,7 +345,7 @@ func (v *Viper) WatchConfig() {
 	initWG := sync.WaitGroup{}
 	initWG.Add(1)
 	go func() {
-		watcher, err := fsnotify.NewWatcher()
+		watcher, err := newWatcher()
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -1754,7 +1756,7 @@ func (v *Viper) marshalWriter(f afero.File, configType string) error {
 			if sectionName == "default" {
 				sectionName = ""
 			}
-			cfg.Section(sectionName).Key(keyName).SetValue(v.Get(key).(string))
+			cfg.Section(sectionName).Key(keyName).SetValue(v.GetString(key))
 		}
 		cfg.WriteTo(f)
 	}
@@ -1834,7 +1836,7 @@ func mergeMaps(
 
 		svType := reflect.TypeOf(sv)
 		tvType := reflect.TypeOf(tv)
-		if svType != tvType {
+		if tvType != nil && svType != tvType { // Allow for the target to be nil
 			jww.ERROR.Printf(
 				"svType != tvType; key=%s, st=%v, tt=%v, sv=%v, tv=%v",
 				sk, svType, tvType, sv, tv)
