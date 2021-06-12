@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: 📓 Reference
-    url: https://pkg.go.dev/mod/github.com/ava-labs/viper
+    url: https://pkg.go.dev/mod/github.com/Hunter-Thompson/viper
     about: Check the Go code reference

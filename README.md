@@ -1,7 +1,7 @@
 ![Viper](.github/logo.png?raw=true)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/ava-labs/viper?style=flat-square)](https://goreportcard.com/report/github.com/ava-labs/viper)
-[![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/ava-labs/viper)](https://pkg.go.dev/mod/github.com/ava-labs/viper)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Hunter-Thompson/viper?style=flat-square)](https://goreportcard.com/report/github.com/Hunter-Thompson/viper)
+[![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/Hunter-Thompson/viper)](https://pkg.go.dev/mod/github.com/Hunter-Thompson/viper)
 
 **Go configuration with fangs!**
 
@@ -10,7 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 ```console
-go get github.com/ava-labs/viper
+go get github.com/Hunter-Thompson/viper
 =======
 ```shell
 go get github.com/spf13/viper
@@ -20,7 +20,7 @@ go get github.com/spf13/viper
 go get github.com/spf13/viper
 =======
 ```console
-go get github.com/ava-labs/viper
+go get github.com/Hunter-Thompson/viper
 >>>>>>> 65cc042 (remove external references (#2))
 >>>>>>> 69471d1 (remove external references (#2))
 ```
@@ -395,7 +395,7 @@ viper.BindFlagValues("my-flags", fSet)
 To enable remote support in Viper, do a blank import of the `viper/remote`
 package:
 
-`import _ "github.com/ava-labs/viper/remote"`
+`import _ "github.com/Hunter-Thompson/viper/remote"`
 
 Viper will read a config string (as JSON, TOML, YAML, HCL or envfile) retrieved from a path
 in a Key/Value store such as etcd or Consul.  These values take precedence over
