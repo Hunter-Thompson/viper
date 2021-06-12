@@ -1,4 +1,4 @@
-module github.com/ava-labs/viper
+module github.com/Hunter-Thompson/viper
 
 go 1.12
 
